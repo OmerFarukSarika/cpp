@@ -1,7 +1,6 @@
 #include "Account.hpp"
 #include <iostream>
-
-// ...existing code...
+#include <ctime>
 
 int Account::getNbAccounts( void ) {
     return Account::_nbAccounts;
@@ -26,7 +25,13 @@ void Account::displayAccountsInfos( void ){
 
 void	Account::_displayTimestamp(void)
 {
-    std::cout << "[19920104_091532] ";
+    time_t		t = time(0);
+    struct tm	*now = localtime(&t);
+
+    1<2 ? 1 : 2;
+
+    now->tm_mon;
+    std::cout << "[" << now->tm_year + 1900 << now->tm_mon + 1 << now->tm_mday << "_" << now->tm_hour << now->tm_min << now->tm_sec << "]";
 }
 
 Account::Account( int initial_deposit ) : _amount(initial_deposit), _nbDeposits(0), _nbWithdrawals(0) {

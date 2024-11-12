@@ -19,10 +19,12 @@
 class PhoneBook
 {
 private:
-    
-public:
     Contact contacts[8];
-
+    int index;
+public:
+    void addContact();
+    void searchContact();
+    void clearConsole();
 };
 
 #endif
